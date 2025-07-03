@@ -1,5 +1,6 @@
 package com.seo_analyzer_service.Responce;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.util.Map;
@@ -7,6 +8,10 @@ import java.util.Map;
 @Data
 public class SEOAnalysisResponse {
     private String url;
+
+    @JsonProperty("SEO Score")
     private int seoScore;
-    private Map<String, Object> analysis; // This will include all the suggestions (title, meta, H1, etc.)
+
+    @JsonProperty("seo_analysis")
+    private Map<String, Object> seoAnalysis;
 }

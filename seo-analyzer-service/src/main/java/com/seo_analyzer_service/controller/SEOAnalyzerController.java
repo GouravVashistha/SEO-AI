@@ -5,7 +5,6 @@ import com.seo_analyzer_service.serive.SEOAnalyzerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-// controller for SEO analysis service
 @RestController
 @RequestMapping("/api/seo")
 public class SEOAnalyzerController {
