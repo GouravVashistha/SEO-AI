@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SEO Analyzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div style="position: fixed; top: 20%; left: 20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(13,110,253,0.15), transparent); border-radius: 50%; filter: blur(80px); z-index: 0;"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">SEO Analyzer</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container text-center mt-5">
+        <h3>Check your SEO Score</h3>
+        
+        <div class="logo-wrapper my-3">
+            <img src="logo-main.png" alt="Turbify Logo" class="stylish-logo">
+        </div>
+
+
+        <!-- Search Bar and Button -->
+        <div class="input-group mb-3 justify-content-center">
+            <input type="text" id="urlInput" class="form-control w-50" placeholder="Paste website URL here">
+            <button class="btn btn-primary" id="analyzeBtn">Enter</button>
+        </div>
+
+        <!-- SEO Score -->
+        <div id="seoScore" class="mt-3 fs-4 fw-bold text-success"></div>
+
+        <!-- Results Section -->
+        <div class="row mt-5">
+            <!-- Suggestions Box -->
+            <div class="col-md-6">
+                <h5>Suggestions</h5>
+                <div id="suggestionsBox" class="p-3 border rounded bg-light text-start" style="height: 400px; overflow-y: auto;"></div>
+            </div>
+
+            <!-- Website Preview -->
+            <div class="col-md-6">
+                <h5>Website Preview</h5>
+                <iframe id="websitePreview" class="w-100 border rounded" style="height: 400px;"></iframe>
+            </div>
+        </div>
+    </div>
+        <!-- Footer -->
+    <footer class="bg-dark text-white text-center mt-5 py-3">
+        <div class="container">
+            <p class="mb-0">© 2025 SEO Analyzer | Built by Gaurav Vashistha</p>
+            <small>Analyze your website SEO for free and improve your online presence.</small>
+        </div>
+    </footer>
+
+
+    <!-- JS Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
