@@ -1,112 +1,150 @@
+/* === GLOBAL RESET === */
 body {
   background-color: #f8f9fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.sidebar {
+  color: #212529;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  background-color: #212529 !important;
 }
 
+main.main-content {
+  flex: 1;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background-color: #002855;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1040;
+}
+.navbar-brand {
+  color: #ffffff !important;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+  position: fixed;
+  top: 56px; /* height of navbar */
+  left: 0;
+  height: calc(100vh - 56px);
+  width: 254px;
+  background-color: #ffffff;
+  border-right: 5px solid #dee2e6;
+  overflow-y: auto;
+  z-index: 1030;
+}
 .sidebar .nav-link {
-  color: #ffffff;
-  padding: 0.75rem 1rem;
-  border-left: 4px solid transparent;
-  transition: 0.3s;
+  color: #002855;
+  font-weight: 500;
+  padding: 13px 15px;
+  transition: background 0.2s, border-left 0.2s;
 }
-
 .sidebar .nav-link:hover,
 .sidebar .nav-link.active {
-  background-color: #343a40;
-  border-left: 4px solid #198754;
-  color: #ffffff;
+  background-color: #e9f5ff;
+  border-left: 4px solid #ffb600;
+  color: #002855;
 }
 
+/* === MAIN CONTENT === */
+main.main-content {
+  margin-left: 200px; /* match sidebar width */
+  padding-top: 70px;  /* spacing below fixed top navbar */
+  padding-bottom: 60px; /* avoid overlap with footer */
+}
+
+/* === SCORE CIRCLE === */
 .score-circle {
   width: 120px;
   height: 120px;
+  background-color: #0047ab;
+  color: #fff;
+  font-size: 24px;
   border-radius: 50%;
-  background: #198754;
-  color: white;
-  font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 1rem auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-#loader {
-  width: 35px;
-  height: 35px;
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #198754;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto;
+/* === LOADER === */
+#loader-container .spinner-border {
+  color: #ffb600;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+/* === SEO RESULT SECTIONS === */
+.section-content {
+  background-color: #fff;
+  border-left: 4px solid #0047ab;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-
-.loader-text {
-  color: #198754;
+.section-content:hover {
+  background-color: #e9f5ff;
+}
+.section-title {
+  font-size: 1.2rem;
   font-weight: bold;
-  font-size: 1rem;
-  margin-top: 0.5rem;
+  color: #002855;
+  margin-bottom: 0.5rem;
 }
-
-#details-container .section {
-  display: flex;
-  flex-direction: row;
-  background: #ffffff;
-  border: 1px solid #dee2e6;
-  border-radius: 6px;
-  overflow: hidden;
+.section-data table {
+  width: 100%;
+  border-collapse: collapse;
 }
-
-.section-title-block {
-  width: 25%;
-  background-color: #343a40;
-  color: white;
-  padding: 1rem;
+.section-data td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #eee;
+}
+.section-data td:first-child {
   font-weight: 600;
-  text-transform: capitalize;
+  color: #0047ab;
+  width: 30%;
 }
 
-.section-data-block {
-  width: 75%;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+/* === FOOTER === */
+.footer {
+  background-color: #002855;
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 12px 0;
+  text-align: center;
+  width: 100%;
+  z-index: 1000;
 }
 
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
-  .section-title-block,
-  .section-data-block {
-    width: 100%;
+  .score-circle {
+    width: 90px;
+    height: 90px;
+    font-size: 20px;
   }
-
-  .section {
-    flex-direction: column;
-  }
-
-  .form-control.w-50 {
-    width: 100% !important;
-  }
-
   #search-form {
     flex-direction: column;
     gap: 10px;
   }
-
-  .score-circle {
-    width: 100px;
-    height: 100px;
-    font-size: 18px;
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    border-right: none;
+    padding-top: 0;
+  }
+  main.main-content {
+    margin-left: 0;
+    padding-top: 70px;
   }
 }
