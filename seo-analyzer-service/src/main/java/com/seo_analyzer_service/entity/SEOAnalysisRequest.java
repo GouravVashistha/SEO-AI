@@ -9,24 +9,28 @@ import java.util.Map;
 public class SEOAnalysisRequest {
     private String url;
 
-    // Basic content details
     private String title;
     private String metaDescription;
     private List<String> h1Tags;
     private List<String> h2Tags;
-    private List<String> headings;
+
+    private List<String> h1TagsHtml; // ✅ NEW
+    private List<String> h2TagsHtml; // ✅ NEW
+
     private List<String> imageAlts;
+    private List<String> missingAltImagesHtml; // ✅ NEW
     private int totalImages;
     private int missingAltCount;
 
-    // Technical SEO
     private String pageSpeedDesktop;
     private String pageSpeedMobile;
     private boolean mobileFriendly;
     private boolean sslEnabled;
+
     private boolean hasCanonical;
+    private String canonicalLink; // ✅ NEW
+
     private List<String> brokenLinks;
 
-    // Optional
     private Map<String, Object> customParams;
 }

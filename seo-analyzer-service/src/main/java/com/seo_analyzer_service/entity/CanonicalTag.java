@@ -6,4 +6,5 @@ import lombok.Data;
 public class CanonicalTag {
     private String status;
     private String suggestion;
+    private String link; // ✅ NEW (optional)
 }

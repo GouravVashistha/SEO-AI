@@ -12,16 +12,10 @@
         </processorPath>
         <module name="seo-analyzer-service" />
       </profile>
-      <profile name="Annotation profile for seo-ai-service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
-        </processorPath>
-        <module name="seo-ai-service" />
-      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="seo-ai-service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
